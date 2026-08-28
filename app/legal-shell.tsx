@@ -70,7 +70,6 @@ export function LegalShell({
         </div>
         <div>
           <a href="mailto:contato@encruzas.com.br">contato@encruzas.com.br</a>
-          <a href="mailto:meinclua@encruzas.com.br">meinclua@encruzas.com.br</a>
         </div>
       </footer>
     </div>
