@@ -1383,7 +1383,7 @@ summary:focus-visible {
   margin-top: 8rem;
   padding: 4rem max(1.5rem, calc((100% - 1440px) / 2)) 3rem;
   border-top: 1px solid var(--line);
-  background: var(--soft);
+  background: color-mix(in srgb, var(--soft) 60%, var(--ink) 8%);
 }
 
 .legal-site-footer > div:first-child {
@@ -1393,8 +1393,9 @@ summary:focus-visible {
 }
 
 .legal-site-footer img {
-  height: 50px;
+  height: 55px;
   width: auto;
+  filter: brightness(0.85) contrast(1.1);
 }
 
 .legal-site-footer p {
