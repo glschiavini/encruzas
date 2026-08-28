@@ -1377,8 +1377,8 @@ summary:focus-visible {
 
 .legal-site-footer {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(3rem, 8vw, 8rem);
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(3rem, 8vw, 6rem);
   align-items: flex-start;
   margin-top: 8rem;
   padding: clamp(3rem, 7vw, 5rem) max(1.5rem, calc((100% - 1440px) / 2));
@@ -1386,58 +1386,39 @@ summary:focus-visible {
   background: var(--white);
 }
 
-.legal-site-footer > div:first-child {
+.legal-site-footer > div {
   display: flex;
   flex-direction: column;
+  gap: 1.5rem;
+}
+
+.legal-site-footer > div:first-child {
   gap: 2rem;
 }
 
 .legal-site-footer img {
-  height: 50px;
+  height: 48px;
   width: auto;
   display: block;
 }
 
 .legal-site-footer p {
   margin: 0;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 500;
   letter-spacing: 0.04em;
   color: color-mix(in srgb, var(--ink) 64%, transparent);
   line-height: 1.6;
 }
 
-.legal-site-footer > div:last-child {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  align-items: flex-start;
-}
-
 .legal-site-footer a {
-  font-size: 0.85rem;
-  font-weight: 700;
+  font-size: 0.8rem;
+  font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--red);
   text-decoration: none;
   transition: color 200ms ease;
-  position: relative;
-}
-
-.legal-site-footer a::after {
-  content: '';
-  position: absolute;
-  inset: auto 0 -6px;
-  height: 1px;
-  background: var(--red);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 200ms ease;
-}
-
-.legal-site-footer a:hover::after {
-  transform: scaleX(1);
 }
 
 .legal-site-footer a:hover {

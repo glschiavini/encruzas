@@ -66,7 +66,10 @@ export function LegalShell({
               alt="Encruzas"
             />
           </a>
-          <p>Desenvolvimento cultural territorial · Itapoá, Santa Catarina · Brasil.</p>
+        </div>
+        <div>
+          <p>Desenvolvimento cultural territorial.</p>
+          <p>Itapoá, Santa Catarina · Brasil.</p>
         </div>
         <div>
           <a href="mailto:contato@encruzas.com.br">contato@encruzas.com.br</a>
