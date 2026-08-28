@@ -1201,8 +1201,14 @@ summary:focus-visible {
 }
 
 .legal-site-header__brand img {
-  height: 40px;
+  height: 52px;
   width: auto;
+}
+
+@media (max-width: 980px) {
+  .legal-site-header__brand img {
+    height: 40px;
+  }
 }
 
 .legal-site-header nav {
