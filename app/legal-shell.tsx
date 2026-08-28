@@ -57,16 +57,21 @@ export function LegalShell({
       </main>
 
       <footer className="legal-site-footer">
-        <a href="/" aria-label="Voltar à página inicial da Encruzas">
-          <img
-            src="/brand/encruzas-v3-horizontal-transparent.png"
-            width="485"
-            height="210"
-            alt="Encruzas"
-          />
-        </a>
-        <p>Desenvolvimento cultural territorial · Itapoá, Santa Catarina.</p>
-        <a href="mailto:contato@encruzas.com.br">contato@encruzas.com.br</a>
+        <div>
+          <a href="/" aria-label="Voltar à página inicial da Encruzas">
+            <img
+              src="/brand/encruzas-v3-horizontal-transparent.png"
+              width="485"
+              height="210"
+              alt="Encruzas"
+            />
+          </a>
+          <p>Desenvolvimento cultural territorial · Itapoá, Santa Catarina · Brasil.</p>
+        </div>
+        <div>
+          <a href="mailto:contato@encruzas.com.br">contato@encruzas.com.br</a>
+          <a href="mailto:meinclua@encruzas.com.br">meinclua@encruzas.com.br</a>
+        </div>
       </footer>
     </div>
   );
