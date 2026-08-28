@@ -20,6 +20,7 @@ export default function AccessibilityPage() {
       lead="A Encruzas quer que pessoas com diferentes formas de acesso possam compreender e utilizar este site."
       companionHref="/politica-de-privacidade"
       companionLabel="Política de Privacidade"
+      footerEmail="meinclua@encruzas.com.br"
     >
         <section>
           <h2>Compromisso</h2>

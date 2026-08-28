@@ -7,6 +7,7 @@ type LegalShellProps = {
   companionHref: string;
   companionLabel: string;
   children: ReactNode;
+  footerEmail?: string;
 };
 
 export function LegalShell({
@@ -16,6 +17,7 @@ export function LegalShell({
   companionHref,
   companionLabel,
   children,
+  footerEmail = 'contato@encruzas.com.br',
 }: LegalShellProps) {
   return (
     <div className="legal-shell">
@@ -71,7 +73,7 @@ export function LegalShell({
           <p>Desenvolvimento cultural territorial.</p>
         </div>
         <div>
-          <a href="mailto:contato@encruzas.com.br">contato@encruzas.com.br</a>
+          <a href={`mailto:${footerEmail}`}>{footerEmail}</a>
         </div>
       </footer>
     </div>
