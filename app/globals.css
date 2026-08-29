@@ -1496,6 +1496,182 @@ summary:focus-visible {
   }
 }
 
+/* Continuidade visual das páginas institucionais */
+.legal-shell { background: var(--soft); }
+
+.legal-site-header {
+  position: relative;
+  min-height: 86px;
+  padding-block: 0;
+  border-color: var(--ink);
+  background: var(--white);
+  backdrop-filter: none;
+}
+
+.legal-site-header__brand img { width: 174px; height: auto; }
+
+.legal-page {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: var(--white);
+}
+
+.legal-page__hero {
+  position: relative;
+  grid-template-columns: minmax(50px, 0.16fr) 1fr;
+  gap: clamp(2rem, 6vw, 7rem);
+  min-height: 72svh;
+  align-items: start;
+  margin: 0;
+  padding: clamp(5rem, 9vw, 9rem) max(1.5rem, calc((100% - 1440px) / 2));
+  overflow: hidden;
+  border-bottom: 1px solid var(--ink);
+  background: color-mix(in srgb, var(--red) 7%, var(--white));
+}
+
+.legal-page__hero::after {
+  content: '';
+  position: absolute;
+  right: -8vw;
+  bottom: -28vw;
+  width: min(48vw, 700px);
+  aspect-ratio: 0.71;
+  background: url('/brand/grafismo-cruzamentos.png') center / cover no-repeat;
+  opacity: 0.065;
+  pointer-events: none;
+}
+
+.legal-page__hero .section-index {
+  grid-column: 1;
+  justify-self: start;
+  margin: 0;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.legal-page__hero > div {
+  position: relative;
+  z-index: 1;
+  grid-column: 2;
+}
+
+.legal-page h1 {
+  max-width: 1120px;
+  font-size: clamp(5rem, 11vw, 11rem);
+  line-height: 0.8;
+}
+
+.legal-page__lead {
+  max-width: 620px;
+  margin: clamp(3rem, 6vw, 6rem) 0 0 auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--ink);
+}
+
+.legal-page__body {
+  grid-template-columns: minmax(220px, 0.42fr) minmax(0, 1fr);
+  gap: clamp(3rem, 9vw, 10rem);
+  padding: clamp(5rem, 10vw, 10rem) max(1.5rem, calc((100% - 1440px) / 2));
+}
+
+.legal-page__aside {
+  top: 3rem;
+  padding: 1rem 0 0;
+  border: 0;
+  border-top: 5px solid var(--red);
+  background: transparent;
+}
+
+.legal-page__aside a {
+  padding: 0 0 0.7rem;
+  border: 0;
+  border-bottom: 1px solid var(--ink);
+  background: transparent;
+  color: var(--ink);
+}
+
+.legal-page__aside a:hover { background: transparent; color: var(--red); }
+.legal-page__content { width: min(100%, 820px); }
+
+.legal-page__content section {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.42fr) minmax(0, 1fr);
+  gap: clamp(1.5rem, 5vw, 5rem);
+  margin: 0;
+  padding: 0 0 3.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.legal-page__content h2 {
+  margin: 0;
+  color: var(--red);
+  line-height: 0.95;
+}
+
+.legal-page__content section > p:first-of-type,
+.legal-page__content section > ul:first-of-type { margin-top: 0; }
+
+.legal-page__version {
+  margin: 0;
+  padding: 1.2rem max(1.5rem, calc((100% - 1440px) / 2));
+  border-top: 1px solid var(--ink);
+  background: color-mix(in srgb, var(--red) 18%, var(--white));
+  color: var(--ink);
+}
+
+.legal-site-footer {
+  grid-template-columns: 1fr 1fr auto;
+  align-items: end;
+  gap: 3rem;
+  margin: 0;
+  padding: 3rem max(1.5rem, calc((100% - 1440px) / 2));
+  border: 0;
+  background: var(--black);
+  color: var(--white);
+}
+
+.legal-site-footer img { width: 210px; height: auto; }
+.legal-site-footer p { color: #cececb; }
+.legal-site-footer > a:last-child { color: var(--white); }
+
+@media (max-width: 820px) {
+  .legal-page__body { grid-template-columns: 1fr; }
+  .legal-page__aside { position: static; }
+  .legal-site-footer { grid-template-columns: 1fr; align-items: start; }
+}
+
+@media (max-width: 640px) {
+  .legal-site-header { min-height: 72px; padding-inline: 1rem; }
+  .legal-site-header__brand img { width: 150px; }
+  .legal-site-header nav a:first-child { display: none; }
+  .legal-site-header nav { font-size: 0.6rem; text-align: right; }
+
+  .legal-page__hero {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 4.5rem 1rem;
+  }
+
+  .legal-page__hero .section-index {
+    grid-column: 1;
+    writing-mode: horizontal-tb;
+    transform: none;
+  }
+
+  .legal-page__hero > div { grid-column: 1; }
+  .legal-page h1 { font-size: clamp(4rem, 20vw, 6rem); }
+  .legal-page__body { padding: 5rem 1rem; }
+
+  .legal-page__content section {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .legal-page__version,
+  .legal-site-footer { padding-inline: 1rem; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
 
