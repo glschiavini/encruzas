@@ -60,9 +60,9 @@ export function LegalShell({
 
       <footer className="legal-site-footer">
         <div>
-          <a href="/" aria-label="Voltar à página inicial da Encruzas">
+          <a className="legal-site-footer__brand" href="/" aria-label="Voltar à página inicial da Encruzas">
             <img
-              src="/brand/encruzas-v3-horizontal-transparent.png"
+              src="/brand/encruzas-v3-horizontal-red-white-transparent.png"
               width="485"
               height="210"
               alt="Encruzas"
