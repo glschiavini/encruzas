@@ -7,7 +7,7 @@ import '@fontsource/roboto-condensed/700.css';
 import './globals.css';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.encruzas.com.br'),
+  metadataBase: new URL('https://encruzas.com.br'),
   title: 'Encruzas — Desenvolvimento cultural territorial',
   description:
     'A Encruzas articula pessoas, conhecimentos, instituições e tecnologias para estruturar projetos e infraestruturas viáveis.',
