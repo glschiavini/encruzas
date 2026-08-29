@@ -1,6 +1,8 @@
 export default function NotFound() {
   return (
-    <main className="error-page">
+    <>
+      <title>Página não encontrada — Encruzas</title>
+      <main className="error-page">
       <header className="error-page__header">
         <a href="/" aria-label="Encruzas — página inicial">
           <img
@@ -28,6 +30,7 @@ export default function NotFound() {
           </div>
         </div>
       </section>
-    </main>
+      </main>
+    </>
   );
 }

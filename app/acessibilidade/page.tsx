@@ -20,7 +20,6 @@ export default function AccessibilityPage() {
       lead="A Encruzas quer que pessoas com diferentes formas de acesso possam compreender e utilizar este site."
       companionHref="/politica-de-privacidade"
       companionLabel="Política de Privacidade"
-      footerEmail="meinclua@encruzas.com.br"
     >
         <section>
           <h2>Compromisso</h2>
@@ -42,10 +41,15 @@ export default function AccessibilityPage() {
           </ul>
         </section>
         <section>
-          <h2>Situação da avaliação</h2>
+          <h2>Status de conformidade</h2>
           <p>
-            O site está em processo de implementação e validação. Testes automatizados ajudam a localizar
-            problemas, mas a avaliação será complementada por navegação com teclado, leitor de tela, zoom e uso real.
+            Na autoavaliação técnica concluída em 29 de agosto de 2026, as páginas e os estados incluídos no escopo
+            atenderam aos critérios WCAG 2.2, níveis A e AA, aplicáveis ao conteúdo e às funções existentes.
+          </p>
+          <p>
+            A avaliação combinou verificações automatizadas e inspeção técnica manual de estrutura semântica,
+            contraste, teclado, foco, reflow, zoom e movimento. Ela não incluiu testes conduzidos por pessoas com
+            deficiência nem constitui certificação por terceira parte.
           </p>
         </section>
         <section>

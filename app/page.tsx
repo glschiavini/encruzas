@@ -1,3 +1,5 @@
+import { SkipLink } from './skip-link';
+
 const method = [
   ['01', 'Compreender', 'Ler o contexto, as necessidades, as pessoas e as condições reais.'],
   ['02', 'Reconhecer', 'Identificar capacidades, conhecimentos, experiências e recursos existentes.'],
@@ -32,7 +34,7 @@ const fronts = [
 
 function BrandMark({ negative = false }: { negative?: boolean }) {
   return (
-    <span className="brand" aria-label="Encruzas">
+    <span className="brand">
       <img
         className="brand__signature"
         src={negative
@@ -40,7 +42,7 @@ function BrandMark({ negative = false }: { negative?: boolean }) {
           : '/brand/encruzas-v3-horizontal-transparent.png'}
         width={negative ? 485 : 480}
         height="210"
-        alt=""
+        alt="Encruzas"
       />
     </span>
   );
@@ -49,12 +51,10 @@ function BrandMark({ negative = false }: { negative?: boolean }) {
 export default function Home() {
   return (
     <>
-      <a className="skip-link" href="#conteudo">
-        Pular para o conteúdo principal
-      </a>
+      <SkipLink targetId="conteudo" />
 
       <header className="site-header">
-        <a className="site-header__brand" href="#inicio">
+        <a className="site-header__brand" href="#inicio" aria-label="Encruzas — página inicial">
           <BrandMark />
         </a>
         <nav className="site-nav" aria-label="Navegação principal">
@@ -78,7 +78,7 @@ export default function Home() {
         </a>
       </header>
 
-      <main id="conteudo">
+      <main id="conteudo" tabIndex={-1}>
         <section className="hero" id="inicio" aria-labelledby="hero-title">
           <div className="hero__grid" aria-hidden="true" />
           <div className="hero__copy">
@@ -278,6 +278,8 @@ export default function Home() {
         <nav aria-label="Links institucionais">
           <a href="/politica-de-privacidade">Política de Privacidade</a>
           <a href="/acessibilidade">Declaração de Acessibilidade</a>
+          <a href="mailto:contato@encruzas.com.br">Contato geral</a>
+          <a href="mailto:meinclua@encruzas.com.br">Relatar barreira de acessibilidade</a>
         </nav>
         <div className="site-footer__bottom">
           <span>© 2026 Encruzas.</span>

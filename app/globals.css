@@ -19,6 +19,8 @@
 
 html { scroll-behavior: smooth; }
 
+[id] { scroll-margin-top: 104px; }
+
 body {
   margin: 0;
   background: var(--paper);
@@ -53,6 +55,14 @@ summary:focus-visible {
 }
 
 .skip-link:focus { transform: translateY(0); }
+
+main:focus { outline: none; }
+
+.contact a:focus-visible,
+.site-footer a:focus-visible,
+.legal-site-footer a:focus-visible {
+  outline-color: var(--white);
+}
 
 .site-header {
   position: fixed;
@@ -99,7 +109,12 @@ summary:focus-visible {
 .site-nav a,
 .header-cta { text-decoration: none; }
 
-.site-nav a { position: relative; }
+.site-nav a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+}
 
 .site-nav a::after {
   content: '';
@@ -153,7 +168,7 @@ summary:focus-visible {
   background-position: right -22vw bottom -60vw;
   background-size: min(72vw, 980px) auto;
   mask-image: linear-gradient(to left, black, transparent 82%);
-  animation: hero-background-drift 18s ease-in-out infinite alternate;
+  animation: hero-background-drift 4s ease-out 1 both;
 }
 
 .hero__copy {
@@ -224,6 +239,9 @@ summary:focus-visible {
 }
 
 .text-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -499,6 +517,7 @@ summary:focus-visible {
 
 .front {
   position: relative;
+  min-width: 0;
   min-height: 270px;
   padding: 1.7rem 2rem 2.1rem;
   border-top: 5px solid var(--red);
@@ -559,6 +578,10 @@ summary:focus-visible {
   text-transform: uppercase;
 }
 
+.front__meta { flex-wrap: wrap; }
+
+.front__meta span:last-child { text-align: right; }
+
 .front h3 {
   max-width: 760px;
   margin: 2.4rem 0 1.2rem;
@@ -567,6 +590,7 @@ summary:focus-visible {
   font-weight: 400;
   line-height: 0.88;
   text-transform: uppercase;
+  overflow-wrap: anywhere;
   transition: color 220ms ease;
 }
 
@@ -583,7 +607,8 @@ summary:focus-visible {
   display: inline-flex;
   justify-content: space-between;
   gap: 2rem;
-  min-width: min(100%, 350px);
+  width: min(100%, 350px);
+  min-width: 0;
   padding-bottom: 0.5rem;
   border-bottom: 1px solid var(--red);
   font-size: 0.76rem;
@@ -591,6 +616,7 @@ summary:focus-visible {
   letter-spacing: 0.1em;
   text-decoration: none;
   text-transform: uppercase;
+  overflow-wrap: anywhere;
 }
 
 .foundation {
@@ -600,6 +626,8 @@ summary:focus-visible {
   background: var(--black);
   color: var(--white);
 }
+
+.foundation > * { min-width: 0; }
 
 .foundation__portrait {
   position: relative;
@@ -792,6 +820,8 @@ summary:focus-visible {
 
 .contact > * { position: relative; z-index: 1; }
 
+.contact > * { min-width: 0; }
+
 .contact__prompt h2 {
   max-width: 900px;
   font-size: clamp(4.5rem, 9vw, 9.5rem);
@@ -813,7 +843,9 @@ summary:focus-visible {
 }
 
 .contact__actions a {
+  max-width: 100%;
   font-weight: 700;
+  overflow-wrap: anywhere;
 }
 
 .contact__primary {
@@ -892,6 +924,9 @@ summary:focus-visible {
   }
 
   .mobile-nav summary {
+    display: inline-flex;
+    align-items: center;
+    min-height: 24px;
     cursor: pointer;
     font-size: 0.76rem;
     font-weight: 700;
@@ -1053,7 +1088,10 @@ summary:focus-visible {
     margin-bottom: 4.5rem;
   }
 
-  .fronts__intro h2 { font-size: 4.8rem; }
+  .fronts__intro h2 {
+    font-size: 3.7rem;
+    overflow-wrap: anywhere;
+  }
 
   .fronts__list {
     grid-template-columns: 1fr;
@@ -1068,7 +1106,10 @@ summary:focus-visible {
 
   .front h3 { margin-top: 3rem; }
 
-  .foundation__content h2 { font-size: 4rem; }
+  .foundation__content h2 {
+    font-size: 3.5rem;
+    overflow-wrap: anywhere;
+  }
 
   .foundation__columns { columns: 1; }
 
@@ -1083,9 +1124,18 @@ summary:focus-visible {
 
   .project__meta span:first-child { max-width: 48%; }
 
-  .project h3 { font-size: 3.7rem; }
+  .projects__heading > * { min-width: 0; }
 
-  .contact__prompt h2 { font-size: 4.4rem; }
+  .projects__heading h2,
+  .project h3 {
+    font-size: 3.2rem;
+    overflow-wrap: anywhere;
+  }
+
+  .contact__prompt h2 {
+    font-size: 3.6rem;
+    overflow-wrap: anywhere;
+  }
 
   .contact__primary {
     overflow-wrap: anywhere;
@@ -1219,6 +1269,9 @@ summary:focus-visible {
 }
 
 .legal-site-header nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
   font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -1402,6 +1455,19 @@ summary:focus-visible {
   gap: 1rem;
 }
 
+.legal-site-footer > div:last-child {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.8rem;
+}
+
+.site-footer nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+}
+
 .legal-site-footer img {
   height: 40px;
   width: auto;
@@ -1418,6 +1484,9 @@ summary:focus-visible {
 }
 
 .legal-site-footer a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
   font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -1546,6 +1615,7 @@ summary:focus-visible {
   grid-column: 1;
   justify-self: start;
   margin: 0;
+  color: color-mix(in srgb, var(--red) 84%, var(--black));
   writing-mode: vertical-rl;
   transform: rotate(180deg);
 }
@@ -1560,6 +1630,8 @@ summary:focus-visible {
   max-width: 1120px;
   font-size: clamp(5rem, 11vw, 11rem);
   line-height: 0.8;
+  overflow-wrap: anywhere;
+  hyphens: auto;
 }
 
 .legal-page__lead {
@@ -1596,21 +1668,31 @@ summary:focus-visible {
 
 .legal-page__content section {
   display: grid;
-  grid-template-columns: minmax(180px, 0.42fr) minmax(0, 1fr);
-  gap: clamp(1.5rem, 5vw, 5rem);
+  grid-template-columns: minmax(260px, 0.5fr) minmax(0, 1fr);
+  column-gap: clamp(2rem, 4vw, 4rem);
+  row-gap: 1rem;
   margin: 0;
   padding: 0 0 3.5rem;
   margin-bottom: 3.5rem;
 }
 
 .legal-page__content h2 {
+  grid-column: 1;
+  align-self: start;
+  min-width: 0;
   margin: 0;
   color: var(--red);
   line-height: 0.95;
+  text-wrap: balance;
 }
 
-.legal-page__content section > p:first-of-type,
-.legal-page__content section > ul:first-of-type { margin-top: 0; }
+.legal-page__content section > :not(h2) {
+  grid-column: 2;
+  min-width: 0;
+}
+
+.legal-page__content section > p,
+.legal-page__content section > ul { margin-block: 0; }
 
 .legal-page__version {
   margin: 0;
@@ -1645,7 +1727,7 @@ summary:focus-visible {
 }
 
 .legal-site-footer p { color: #cececb; }
-.legal-site-footer > a:last-child { color: var(--white); }
+.legal-site-footer > div:last-child a { color: var(--white); }
 
 @media (max-width: 820px) {
   .legal-page__body { grid-template-columns: 1fr; }
@@ -1672,13 +1754,15 @@ summary:focus-visible {
   }
 
   .legal-page__hero > div { grid-column: 1; }
-  .legal-page h1 { font-size: clamp(4rem, 20vw, 6rem); }
+  .legal-page h1 { font-size: clamp(3.2rem, 18vw, 6rem); }
   .legal-page__body { padding: 5rem 1rem; }
 
   .legal-page__content section {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
+
+  .legal-page__content section > :not(h2) { grid-column: 1; }
 
   .legal-page__version,
   .legal-site-footer { padding-inline: 1rem; }
@@ -1786,6 +1870,9 @@ summary:focus-visible {
 
 .error-page__actions a,
 .error-page__actions button {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
   font: inherit;
   font-size: 0.76rem;
   font-weight: 700;

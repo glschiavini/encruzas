@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import { SkipLink } from './skip-link';
 
 type LegalShellProps = {
   eyebrow: string;
@@ -7,7 +8,6 @@ type LegalShellProps = {
   companionHref: string;
   companionLabel: string;
   children: ReactNode;
-  footerEmail?: string;
 };
 
 export function LegalShell({
@@ -17,11 +17,10 @@ export function LegalShell({
   companionHref,
   companionLabel,
   children,
-  footerEmail = 'contato@encruzas.com.br',
 }: LegalShellProps) {
   return (
     <div className="legal-shell">
-      <a className="skip-link" href="#legal-content">Pular para o conteúdo principal</a>
+      <SkipLink targetId="legal-content" />
 
       <header className="legal-site-header">
         <a className="legal-site-header__brand" href="/" aria-label="Encruzas — página inicial">
@@ -38,7 +37,7 @@ export function LegalShell({
         </nav>
       </header>
 
-      <main className="legal-page" id="legal-content">
+      <main className="legal-page" id="legal-content" tabIndex={-1}>
         <header className="legal-page__hero">
           <p className="section-index">{eyebrow}</p>
           <div>
@@ -73,7 +72,8 @@ export function LegalShell({
           <p>Desenvolvimento cultural territorial.</p>
         </div>
         <div>
-          <a href={`mailto:${footerEmail}`}>{footerEmail}</a>
+          <a href="mailto:contato@encruzas.com.br">Contato geral · contato@encruzas.com.br</a>
+          <a href="mailto:meinclua@encruzas.com.br">Acessibilidade · meinclua@encruzas.com.br</a>
         </div>
       </footer>
     </div>
