@@ -1672,6 +1672,139 @@ summary:focus-visible {
   .legal-site-footer { padding-inline: 1rem; }
 }
 
+.error-page {
+  position: relative;
+  min-height: 100svh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--red) 8%, var(--white));
+}
+
+.error-page::after {
+  content: '';
+  position: absolute;
+  right: -14vw;
+  bottom: -28vw;
+  width: min(62vw, 920px);
+  aspect-ratio: 0.71;
+  background: url('/brand/grafismo-cruzamentos.png') center / cover no-repeat;
+  opacity: 0.075;
+  pointer-events: none;
+}
+
+.error-page__header {
+  position: relative;
+  z-index: 2;
+  min-height: 86px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 0 max(1.5rem, calc((100% - 1440px) / 2));
+  border-bottom: 1px solid var(--ink);
+  background: var(--white);
+}
+
+.error-page__header a { line-height: 0; }
+.error-page__header img { display: block; width: 174px; height: auto; }
+
+.error-page__header span,
+.error-page__index {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.error-page__content {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(50px, 0.18fr) 1fr;
+  gap: clamp(2rem, 7vw, 8rem);
+  align-items: start;
+  padding: clamp(4rem, 8vw, 8rem) max(1.5rem, calc((100% - 1440px) / 2));
+}
+
+.error-page__index {
+  justify-self: start;
+  margin: 0;
+  color: var(--red);
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.error-page__message { max-width: 1050px; }
+
+.error-page__code {
+  display: block;
+  margin-bottom: -0.08em;
+  color: var(--red);
+  font-family: var(--display);
+  font-size: clamp(8rem, 22vw, 22rem);
+  line-height: 0.65;
+}
+
+.error-page h1 {
+  max-width: 980px;
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(4rem, 8vw, 8.5rem);
+  font-weight: 400;
+  line-height: 0.86;
+  text-transform: uppercase;
+}
+
+.error-page__message > p {
+  max-width: 580px;
+  margin: 2.5rem 0 0;
+  padding-top: 1rem;
+  border-top: 1px solid var(--ink);
+  font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+}
+
+.error-page__actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem 2.5rem;
+  margin-top: 2.5rem;
+}
+
+.error-page__actions a,
+.error-page__actions button {
+  font: inherit;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.error-page__primary {
+  display: inline-flex;
+  justify-content: space-between;
+  gap: 2rem;
+  min-width: 230px;
+  padding: 1rem;
+  border: 1px solid var(--red);
+  background: var(--red);
+  color: var(--white);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.error-page__primary:hover { background: var(--ink); border-color: var(--ink); }
+
+@media (max-width: 640px) {
+  .error-page__header { min-height: 72px; padding-inline: 1rem; }
+  .error-page__header img { width: 150px; }
+  .error-page__content { grid-template-columns: 1fr; gap: 2rem; padding: 4rem 1rem; }
+  .error-page__index { writing-mode: horizontal-tb; transform: none; }
+  .error-page__code { font-size: 9rem; }
+  .error-page h1 { font-size: 4.3rem; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
 
