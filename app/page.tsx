@@ -185,7 +185,10 @@ export default function Home() {
           </figure>
           <div className="foundation__content">
             <div className="section-index section-index--light">04 · Fundamento</div>
-            <h2 id="foundation-title">A trajetória oferece fundamento. Os projetos começam agora.</h2>
+              <h2 id="foundation-title">
+                A trajetória oferece fundamento.<br />
+                Os projetos começam agora.
+              </h2>
             <div className="foundation__columns">
               <p>
                 A Encruzas é uma iniciativa autoral dirigida por
